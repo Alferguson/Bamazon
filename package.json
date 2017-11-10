@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alferguson/Bamazon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alferguson/Bamazon/issues"
+  },
+  "homepage": "https://github.com/Alferguson/Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.3.0",
+    "require": "^2.4.20"
+  }
+}
