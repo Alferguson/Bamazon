@@ -16,7 +16,7 @@ INSERT INTO products
 VALUES ("Somewhat Warm Pizza", "Food-Depo", 20, 500), 
 	("Dull Hair Trimmers", "Health-Depo", 2, 500000000), 
 	("A pickle that can be used as a tv remote", "TV-Depo", 4, 3200), 
-	("Gnarly pickes", "Food-Depo", 2, 100), 
+	("Gnarly pickles", "Food-Depo", 2, 100), 
 	("An in-depth analysis of the Bee Movie", "DVD-Depo", 5000, 4), 
 	("A cake with salami in it", "Food-Depo", 60, 75), 
 	("Knack", "VideoGame-Depo", 100, 9500), 

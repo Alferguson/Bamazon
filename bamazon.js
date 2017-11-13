@@ -22,9 +22,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
   if (err) throw err;
-  console.log("connected");
   startUp();
-  inquire();
 
 });
 
@@ -39,6 +37,7 @@ var startUp = function() {
   	}
     // creates tables from res values
     console.log(table.toString());
+    inquire();
   }) 	
 
 }
