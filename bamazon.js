@@ -12,6 +12,7 @@ var table = new Table({
            , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }    
 });
 
+// connect to mySQL
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
@@ -20,10 +21,10 @@ var connection = mysql.createConnection({
   database: "bamazon_db"
 });
 
+// start the main function when it starts
 connection.connect(function(err) {
   if (err) throw err;
   startUp();
-
 });
 
 // displays table of data
@@ -39,7 +40,6 @@ var startUp = function() {
     console.log(table.toString());
     inquire();
   }) 	
-
 }
 
 var inquire = function() {
@@ -56,7 +56,6 @@ var inquire = function() {
     }
   ])
   .then(function(answer) {
-
     connection.query("SELECT item_id, product_name, stock_quantity FROM products", function(err, res) {
       for (var j = 0; j < res.length; j++) {
         if (res[j].item_id === parseInt(answer.productID)) {
@@ -72,7 +71,7 @@ var inquire = function() {
                 item_id: id
               }],
               function(err, result) {
-                if (err) throw error;
+                if (err) throw err;
                 console.log("Your " + productName + " will arrive in 7 days, thank you for your purchase!\n");
               }
             );
@@ -82,33 +81,7 @@ var inquire = function() {
           }
         }
       }  
-    connection.end();
+      connection.end();
     });  
   })  
 }   
-
-// var update = function() {
-//   connection.query("SELECT item_id, product_name, stock_quantity FROM products", function(err, res) {
-//     for (var j = 0; j < res.length; j++) {
-//       if (res[j].item_id === parseInt(answer.productID)) {
-//         if (res[j].stock_quantity >= parseInt(answer.units)) {
-//           console.log(res[j].product_name);
-//           var query = connection.query("UPDATE products SET ? WHERE ?",
-//             {
-//               stock_quantity: res[j].stock_quantity - parseInt(answer.units)
-//             },
-//             function(err, res) {
-//               // console.log(res.changedRows);
-//               // console.log("Your " + res[j].product_name + " will arrive in 7 days, thank you for your purchase!\n");
-//             }
-//           );
-//         }
-//         else {
-//           console.log("Sorry, not enough of that item exists");
-//         }
-//       }
-//     }  
-//   console.log("eh");
-//   });
-// connection.end();      
-// }
