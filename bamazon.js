@@ -4,12 +4,12 @@ var Table = require('cli-table2');
 
 // creates table
 var table = new Table({
-    head: ["Item ID", "Product", "Department", "Price", "Stock Quantity"],
-    colWidths: [4, 35, 15, 6, 20],
-    chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
-           , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
-           , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
-           , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }    
+  head: ["Item ID", "Product", "Department", "Price", "Stock Quantity"],
+  colWidths: [4, 35, 15, 6, 20],
+  chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
+    , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
+    , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
+    , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }    
 });
 
 // connect to mySQL
@@ -84,4 +84,4 @@ var inquire = function() {
       connection.end();
     });  
   })  
-}   
+}
